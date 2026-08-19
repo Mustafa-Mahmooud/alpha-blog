@@ -10,11 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_08_19_094426) do
+ActiveRecord::Schema[8.1].define(version: 2026_08_19_133437) do
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "descreption"
     t.string "name"
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "email"
+    t.string "name"
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "articles", "users"
 end
