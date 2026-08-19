@@ -1,0 +1,18 @@
+default: &default
+  adapter: sqlserver
+  host: localhost
+  port: 1433
+  integrated_security: true
+  encrypt: false
+
+development:
+  <<: *default
+  database: AlphaBlog_development
+
+test:
+  <<: *default
+  database: AlphaBlog_test
+
+production:
+  <<: *default
+  database: AlphaBlog_production
