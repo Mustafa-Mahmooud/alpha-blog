@@ -1,0 +1,6 @@
+<%= @user.name %>
+<%= @user.email %>
+<% @user.articles.each do |article| %>
+  <li><%= article.name %></li>
+<% end %>   
+

@@ -1,0 +1,11 @@
+<h1 class="text-center mt-4">Bloggers</h1>
+
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="card mb-3 shadow-sm">
+        <p class="card-text">
+          <%= pluralize(user.articles.count, "article") %>
+        </p>
+    </div>
+  <% end %>
+</div>
